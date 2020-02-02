@@ -4,14 +4,54 @@ import { assign as ObjectAssign, unique } from './compat.mjs';
 
 const IntlDateTimeFormat = Intl.DateTimeFormat;
 
-import { DateTime as TemporalDateTime } from './datetime.mjs';
-import { Date as TemporalDate } from './date.mjs';
-import { YearMonth as TemporalYearMonth } from './yearmonth.mjs';
-import { MonthDay as TemporalMonthDay } from './monthday.mjs';
-import { Time as TemporalTime } from './time.mjs';
-import { Absolute as TemporalAbsolute } from './absolute.mjs';
-import { TimeZone as TemporalTimeZone } from './timezone.mjs';
-import { Duration as TemporalDuration } from './duration.mjs';
+const _TemporalDateTime = import('./datetime.mjs')
+const _TemporalDate = import('./date.mjs')
+const _TemporalYearMonth = import('./yearmonth.mjs')
+const _TemporalMonthDay = import('./monthday.mjs')
+const _TemporalTime = import('./time.mjs')
+const _TemporalAbsolute = import('./absolute.mjs')
+const _TemporalTimeZone = import('./timezone.mjs')
+const _TemporalDuration = import('./duration.mjs')
+
+let TemporalDateTime
+let TemporalDate
+let TemporalYearMonth
+let TemporalMonthDay
+let TemporalTime
+let TemporalAbsolute
+let TemporalTimeZone
+let TemporalDuration
+
+const INTRINSICS = {}
+
+export const _temporalLoaded= Promise.all([
+	_TemporalDateTime,
+	_TemporalDate,
+	_TemporalYearMonth,
+	_TemporalMonthDay,
+	_TemporalTime,
+	_TemporalAbsolute,
+	_TemporalTimeZone,
+	_TemporalDuration
+]).then( function( temps){
+	TemporalDateTime= temps[ 0]
+	TemporalDate= temps[ 1]
+	TemporalYearMonth= temps[ 2]
+	TemporalMonthDay= temps[ 3]
+	TemporalTime= temps[ 4]
+	TemporalAbsolute= temps[ 5]
+	TemporalTimeZone= temps[ 6]
+	TemporalDuration= temps[ 7]
+
+	INTRINSICS['%Temporal.DateTime%']= TemporalDateTime
+	INTRINSICS['%Temporal.Date%']= TemporalDate
+	INTRINSICS['%Temporal.YearMonth%']= TemporalYearMonth
+	INTRINSICS['%Temporal.MonthDay%']= TemporalMonthDay
+	INTRINSICS['%Temporal.Time%']= TemporalTime
+	INTRINSICS['%Temporal.TimeZone%']= TemporalTimeZone
+	INTRINSICS['%Temporal.Absolute%']= TemporalAbsolute
+	INTRINSICS['%Temporal.Duration%']= TemporalDuration
+})
 
 import bigInt from 'big-integer';
 
@@ -41,16 +81,6 @@ import {
 
 const DAYMILLIS = 86400000;
 
-const INTRINSICS = {
-  '%Temporal.DateTime%': TemporalDateTime,
-  '%Temporal.Date%': TemporalDate,
-  '%Temporal.YearMonth%': TemporalYearMonth,
-  '%Temporal.MonthDay%': TemporalMonthDay,
-  '%Temporal.Time%': TemporalTime,
-  '%Temporal.TimeZone%': TemporalTimeZone,
-  '%Temporal.Absolute%': TemporalAbsolute,
-  '%Temporal.Duration%': TemporalDuration
-};
 
 import * as PARSE from './regex.mjs';
 
