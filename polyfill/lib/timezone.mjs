@@ -137,7 +137,7 @@ export class TimeZone {
     );
   }
 }
-
+export default TimeZone
 TimeZone.prototype.toJSON = TimeZone.prototype.toString;
 
 if ('undefined' !== typeof Symbol) {

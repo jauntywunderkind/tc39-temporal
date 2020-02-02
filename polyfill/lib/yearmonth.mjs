@@ -143,6 +143,7 @@ export class YearMonth {
     return ES.ComparisonResult(0);
   }
 }
+export default YearMonth
 YearMonth.prototype.toJSON = YearMonth.prototype.toString;
 
 MakeIntrinsicClass(YearMonth, 'Temporal.YearMonth');

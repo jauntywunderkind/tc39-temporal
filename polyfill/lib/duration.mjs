@@ -160,6 +160,7 @@ export class Duration {
     );
   }
 }
+export default Duration
 Duration.prototype.toJSON = Duration.prototype.toString;
 
 MakeIntrinsicClass(Duration, 'Temporal.Duration');

@@ -8,6 +8,7 @@ export const now = {
     time,
     timeZone
 };
+export default now
 
 function absolute() {
     const ns = ES.SystemUTCEpochNanoSeconds();

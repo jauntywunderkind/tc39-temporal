@@ -143,6 +143,7 @@ export class MonthDay {
     return ES.ComparisonResult(0);
   }
 }
+export default MonthDay
 MonthDay.prototype.toJSON = MonthDay.prototype.toString;
 
 MakeIntrinsicClass(MonthDay, 'Temporal.MonthDay');

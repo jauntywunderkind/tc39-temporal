@@ -155,6 +155,7 @@ export class Date {
     return ES.ComparisonResult(0);
   }
 }
+export default Date
 Date.prototype.toJSON = Date.prototype.toString;
 
 MakeIntrinsicClass(Date, 'Temporal.Date');

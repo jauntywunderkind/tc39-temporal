@@ -322,6 +322,7 @@ export class DateTime {
     return ES.ComparisonResult(0);
   }
 }
+export default DateTime
 DateTime.prototype.toJSON = DateTime.prototype.toString;
 
 MakeIntrinsicClass(DateTime, 'Temporal.DateTime');

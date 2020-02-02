@@ -148,6 +148,7 @@ export class Absolute {
     return 0;
   }
 }
+export default Absolute
 Absolute.prototype.toJSON = Absolute.prototype.toString;
 
 MakeIntrinsicClass(Absolute, 'Temporal.Absolute');

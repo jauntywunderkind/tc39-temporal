@@ -470,3 +470,4 @@ export const ZONES = [
   'Pacific/Yap',
   'UTC'
 ];
+export default ZONES

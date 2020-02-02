@@ -214,6 +214,7 @@ export class Time {
     return ES.ComparisonResult(0);
   }
 }
+export default Time
 Time.prototype.toJSON = Time.prototype.toString;
 
 MakeIntrinsicClass(Time, 'Temporal.Time');

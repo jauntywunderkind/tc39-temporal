@@ -3,3 +3,4 @@ import * as Intl from './intl.mjs';
 
 globalThis.Temporal = Temporal;
 export { Temporal, Intl };
+export default Temporal
