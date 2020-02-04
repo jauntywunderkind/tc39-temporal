@@ -34,14 +34,15 @@ export const _temporalLoaded= Promise.all([
 	_TemporalTimeZone,
 	_TemporalDuration
 ]).then( function( temps){
-	TemporalDateTime= temps[ 0]
-	TemporalDate= temps[ 1]
-	TemporalYearMonth= temps[ 2]
-	TemporalMonthDay= temps[ 3]
-	TemporalTime= temps[ 4]
-	TemporalAbsolute= temps[ 5]
-	TemporalTimeZone= temps[ 6]
-	TemporalDuration= temps[ 7]
+
+	TemporalDateTime= temps[ 0].default
+	TemporalDate= temps[ 1].default
+	TemporalYearMonth= temps[ 2].default
+	TemporalMonthDay= temps[ 3].default
+	TemporalTime= temps[ 4].default
+	TemporalAbsolute= temps[ 5].default
+	TemporalTimeZone= temps[ 6].default
+	TemporalDuration= temps[ 7].default
 
 	INTRINSICS['%Temporal.DateTime%']= TemporalDateTime
 	INTRINSICS['%Temporal.Date%']= TemporalDate
