@@ -27,6 +27,12 @@ import Duration, { Duration as orDuration} from "@jauntywunderkind/tc39-temporal
 
 This will currently get you Temporal and Duration, or their named alternatives. But they result in hella bad errors when you try to use them still, because the bad evil hacks I've tried to introduce to bypass the circular dependencies break things more, & at them moment yours truly is running out of hacks to throw at this.
 
+# Versioning
+
+There's not really any "versioning" for TC39 Proposals in general nor the Temporal proposal specifically. This repo attempts to track master as fast as possible. At the moment it's being released under a `[YEAR].[PADDED-MONTH][PADDED-DAY].[REV]` versioning scheme.
+
+Now that I write this, I'm tempted to switch this over to be `0.[YEAR][MONTH][DAY].[REV]` padded (as this would play better with NPM `^0.20200202.0` versioning) but uhhh I've already published stuff & would need a wholly new package now to do that. At the moment, please accept this doubly bad versioning in leiu of my newer singly-bad live versioning idea.
+
 # Please see
 
 **Polyfill for [Proposal: Temporal](https://github.com/tc39/proposal-temporal)**
