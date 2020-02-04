@@ -1,6 +1,6 @@
 {
   "name": "@jauntywunderkind/tc39-temporal",
-  "version": "2020.202.3",
+  "version": "2020.203.0",
   "description": "TC39 Proposal: Temporal",
   "main": "lib/index.mjs",
   "type": "module",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tc39/proposal-temporal.git"
+    "url": "git+https://github.com/jauntywunderkind/tc39-temporal.git"
   },
   "keywords": [
     "TC39",
@@ -29,7 +29,7 @@
   "bugs": {
     "url": "https://github.com/tc39/proposal-temporal/issues"
   },
-  "homepage": "https://github.com/tc39/proposal-temporal#readme",
+  "homepage": "https://github.com/jauntywunderkind/tc39-temporal",
   "dependencies": {
     "big-integer": "^1.6.48",
     "codecov": "^3.6.1",
