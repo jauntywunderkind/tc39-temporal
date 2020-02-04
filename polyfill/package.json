@@ -1,6 +1,6 @@
 {
   "name": "@jauntywunderkind/tc39-temporal",
-  "version": "2020.203.0",
+  "version": "2020.203.1",
   "description": "TC39 Proposal: Temporal",
   "main": "lib/index.mjs",
   "type": "module",
