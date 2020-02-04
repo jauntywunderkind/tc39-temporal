@@ -53,6 +53,11 @@ export const _temporalLoaded= Promise.all([
 	INTRINSICS['%Temporal.Duration%']= TemporalDuration
 })
 
+export async function then( resolve){
+	await _temporalLoaded
+	resolve()
+}
+
 import bigInt from 'big-integer';
 
 import {
